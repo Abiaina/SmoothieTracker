@@ -1,6 +1,5 @@
 FROM node:12.14.1-stretch-slim
 
-
 ARG UID=10001
 ARG GID=10001
 ARG NAME=smoothie
@@ -9,8 +8,6 @@ ARG NAME=smoothie
 RUN groupadd --gid "${GID}" "${NAME}group" \
     && useradd --no-log-init --create-home --gid "${NAME}group" --uid "${UID}" "${NAME}user" \
     && chmod -R 755 /usr/local
-
-
 
 WORKDIR /smoothie
 COPY package.json package-lock.json ./
